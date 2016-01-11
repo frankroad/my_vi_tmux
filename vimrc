@@ -44,7 +44,7 @@ set tm=500
 
 
 " show location
-set cursorcolumn
+"set cursorcolumn
 
 
 " movement
@@ -150,21 +150,21 @@ autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNew *.md,*.mkd,*.markdown  set filetype=markdown.mkd
 
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
-function! AutoSetFileHead()
-    " .sh
-    if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
-    endif
-
-    " python
-    if &filetype == 'python'
-        call setline(1, "\# -*- codind:utf-8 -*-")
-    endif
-
-    normal G
-    normal o
-    normal o
-endfunc
+"function! AutoSetFileHead()
+"    " .sh
+"    if &filetype == 'sh'
+"        call setline(1, "\#!/bin/bash")
+"    endif
+"
+"    " python
+"    if &filetype == 'python'
+"        call setline(1, "\# -*- codind:utf-8 -*-")
+"    endif
+"
+"    normal G
+"    normal o
+"    normal o
+"endfunc
 
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 fun! <SID>StripTrailingWhitespaces()
