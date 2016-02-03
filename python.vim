@@ -19,4 +19,4 @@ filetype plugin indent on
 :set expandtab
 :set encoding=utf-8
 set pastetoggle=<F3>
-
+set number
