@@ -9,7 +9,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
@@ -150,6 +150,9 @@ set laststatus=2   " Always show the status line - use 2 lines for the status ba
 
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType html set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNew *.md,*.mkd,*.markdown  set filetype=markdown.mkd
 
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
@@ -185,3 +188,8 @@ nnoremap j gj
 nnoremap gj j
 
 map <C-j> <C-W>j
+
+
+map <C-a> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+au BufRead,BufNewFile *.less setfiletype css
